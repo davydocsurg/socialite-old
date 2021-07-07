@@ -2,9 +2,9 @@ import HttpService from "./HttpServices";
 
 export const RegisterUserService = (credentials) => {
   const http = new HttpService();
-  let signupUrl = "signup";
+  let signUpUrl = "signup";
   return http
-    .postData(credentials, signupUrl)
+    .postData(credentials, signUpUrl)
     .then((data) => {
       console.log(data);
       return data;
@@ -14,11 +14,11 @@ export const RegisterUserService = (credentials) => {
     });
 };
 
-export const LoginUserService = (credentials) => {
+export const LogInUserService = (credentials) => {
   const http = new HttpService();
-  let loginUrl = "login";
+  let logInUrl = "login";
   return http
-    .postData(credentials, loginUrl)
+    .postData(credentials, logInUrl)
     .then((data) => {
       console.log(data);
       return data;
@@ -30,10 +30,10 @@ export const LoginUserService = (credentials) => {
 
 export const LogOutUserService = () => {
   const http = new HttpService();
-  let loginUrl = "logout";
+  let logInUrl = "logout";
   const tokenId = "user-token";
   return http
-    .getData(loginUrl, tokenId)
+    .getData(logInUrl, tokenId)
     .then((data) => {
       console.log(data);
       return data;

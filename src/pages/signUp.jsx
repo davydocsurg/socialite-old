@@ -6,7 +6,7 @@ import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
 import Button from "@material-ui/core/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { RegisterAction } from "../redux/actions/AuthActions";
-// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // eslint-disable-next-line
   const authResponse = useSelector((state) => state.userAuth.authResponse);
@@ -35,6 +36,10 @@ const SignUp = () => {
       ...fields,
       [e.target.id]: e.target.value,
     });
+  };
+
+  const signIn = () => {
+    history.push("/signin");
   };
 
   const RegisterUser = (e) => {
@@ -153,7 +158,9 @@ const SignUp = () => {
 
                 <div className="row">
                   <div className="col-6">
-                    <span className="">Registered? </span>
+                    <span onClick={signIn} className="signin_link text-info">
+                      Registered? Sign In{" "}
+                    </span>
                   </div>
                 </div>
               </div>

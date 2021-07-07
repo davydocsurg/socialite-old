@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 // import Icon from "@material-ui/core/Icon";
 import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
-import { LoginAction } from "../redux/actions/AuthActions";
+import { LogInAction } from "../redux/actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles();
+  const history = useHistory();
 
   const dispatch = useDispatch();
   const authResponse = useSelector((state) => state.userAuth.authResponse);
@@ -23,6 +25,10 @@ const SignIn = () => {
     login: "",
     password: "",
   });
+
+  const signUp = () => {
+    history.push("/signup");
+  };
 
   const handleFieldChange = (e) => {
     setState({
@@ -35,7 +41,7 @@ const SignIn = () => {
     e.preventDefault();
     console.log(fields);
 
-    dispatch(LoginAction(fields));
+    dispatch(LogInAction(fields));
   };
 
   return (
@@ -83,6 +89,14 @@ const SignIn = () => {
                     </Button>
                   </div>
                 </form>
+
+                <div className="row">
+                  <div className="col-6">
+                    <span onClick={signUp} className="signin_link text-info">
+                      Don't have an account? Sign Up
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

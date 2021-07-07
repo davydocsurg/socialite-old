@@ -1,32 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./css/index.css";
+import Routes from "./Routes";
+import Feed from "./components/Feed";
+import Widgets from "./components/Widgets";
+
 // pages
-import home from "./pages/home";
-import signIn from "./pages/signIn";
-import signUp from "./pages/signUp";
-import { Guard } from "./Guard";
-import PrivateRoute from "./PrivateRoute";
-import Navbar from "./components/Navbar";
+// import home from "./pages/home";
+// import signIn from "./pages/signIn";
+// import signUp from "./pages/signUp";
+// import { Guard } from "./Guard";
+// import PrivateRoute from "./PrivateRoute";
+// import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 export default function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Router>
-        <Switch>
-          <Route exact path="/" component={home}></Route>
-          <Route exact path="/signin" component={signIn}></Route>
-          <Route exact path="/signUp" component={signUp}></Route>
-
-          {/* protected routes */}
-          <Guard
-            path="/"
-            token="user-token"
-            routeRedirect="/signin"
-            component={PrivateRoute}
-          />
-        </Switch>
-      </Router>
+    <div className="container my-3">
+      <div className="app row">
+        <Router>
+          <Sidebar />
+          <Feed />
+          <Widgets />
+          <Routes></Routes>
+        </Router>
+      </div>
     </div>
   );
 }

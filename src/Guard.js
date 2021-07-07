@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+
 export const Guard = ({
   component: Component,
-  token: Token,
+  access_token: Token,
   routeRedirect,
   ...rest
 }) => (

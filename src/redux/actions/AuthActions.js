@@ -1,9 +1,10 @@
 import * as ActionTypes from "../ActionTypes";
 import {
   RegisterUserService,
-  LoginUserService,
+  LogInUserService,
   LogOutUserService,
 } from "../../services/AuthServices";
+import { useHistory } from "react-router-dom";
 
 export const RegisterAction = (credentials) => {
   return (dispatch) => {
@@ -25,17 +26,18 @@ export const RegisterAction = (credentials) => {
   };
 };
 
-export const LoginAction = (credentials, history) => {
+export const LogInAction = (credentials) => {
+  const history = useHistory();
   return (dispatch) => {
     dispatch({ type: ActionTypes.RESTART_AUTH_RESPONSE });
     dispatch({ type: ActionTypes.LOADING });
 
-    LoginUserService(credentials).then(
+    LogInUserService(credentials).then(
       (res) => {
         if (res.hasOwnProperty("success") && res.success === true) {
-          localStorage.setItem("user-token", res.token);
+          localStorage.setItem("user-token", res.access_token);
           dispatch({ type: ActionTypes.LOGIN_SUCCESS });
-          history.push("/user");
+          history.push("/");
         } else if (res.hasOwnProperty("success") && res.success === false) {
           dispatch({ type: ActionTypes.LOGIN_ERROR, res });
         }
@@ -47,9 +49,10 @@ export const LoginAction = (credentials, history) => {
   };
 };
 
-export const LogoutAction = () => {
+export const LogOutAction = () => {
   return (dispatch) => {
     dispatch({ type: ActionTypes.RESTART_AUTH_RESPONSE });
+
     LogOutUserService().then(
       (res) => {
         if (res.hasOwnProperty("success") && res.success === true) {

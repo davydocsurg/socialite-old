@@ -20,6 +20,21 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={home}></Route>
+        <Route exact path="/signin" component={signIn}></Route>
+        <Route exact path="/signUp" component={signUp}></Route>
+
+        {/* protected routes */}
+        <Guard
+          path="/"
+          token="user-token"
+          routeRedirect="/signin"
+          component={PrivateRoute}
+        />
+      </Switch>
+
       {value === index && (
         <Box p={3}>
           <Typography>{children}</Typography>

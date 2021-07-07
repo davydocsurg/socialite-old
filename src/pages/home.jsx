@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 // import PropTypes from "prop-types";
 // import { makeStyles } from "@material-ui/core/styles";
 // import Tabs from "@material-ui/core/Tabs";
@@ -10,28 +10,28 @@ import axios from "axios";
 // import Tweet from "../components/Tweet";
 
 export default function Home() {
-  const [state, setState] = useState({
-    tweets: null,
-  });
+  // const [state, setState] = useState({
+  //   tweets: null,
+  // });
 
-  useEffect(() => {
-    axios
-      .get("/tweets")
-      .then((res) => {
-        console.log("====================================");
-        console.log(res.data);
-        console.log("====================================");
-        setState({
-          ...state,
-          tweets: res.data,
-        });
-      })
-      .catch((err) => {
-        console.log("====================================");
-        console.log(err);
-        console.log("====================================");
-      });
-  });
+  // useEffect(() => {
+  //   axios
+  //     .get("/tweets")
+  //     .then((res) => {
+  //       console.log("====================================");
+  //       console.log(res.data);
+  //       console.log("====================================");
+  //       setState({
+  //         ...state,
+  //         tweets: res.data,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log("====================================");
+  //       console.log(err);
+  //       console.log("====================================");
+  //     });
+  // });
 
   const history = useHistory();
 

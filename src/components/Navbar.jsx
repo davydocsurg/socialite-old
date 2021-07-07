@@ -6,12 +6,10 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import PermMediaOutlinedIcon from "@material-ui/icons/PermMediaOutlined";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { LogoutAction } from "../redux/actions/AuthActions";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import { LogOutAction } from "../redux/actions/AuthActions";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-// import Link from "react-router-dom/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,13 +30,18 @@ export default function Navbar(props) {
 
   const authResponse = useSelector((state) => state.userAuth.authResponse);
 
-  const signout = () => {
-    dispatch(LogoutAction());
-    history.push("signin");
-  };
-  const signin = () => {
+  // routing...
+  const signOut = () => {
+    dispatch(LogOutAction());
     history.push("/signin");
   };
+  const signIn = () => {
+    history.push("/signin");
+  };
+  const signUp = () => {
+    history.push("/signup");
+  };
+
   const token = localStorage.getItem("user-token");
 
   useEffect(() => {
@@ -66,15 +69,19 @@ export default function Navbar(props) {
           </Typography>
           <Router>
             {token !== null && token !== "" ? (
-              <Button color="inherit" component={Link} onclick="{signout}">
+              <Button color="inherit" onClick={signOut}>
                 Sign Out
               </Button>
             ) : (
-              <Button color="inherit" component={Link} to="/signin">
+              // <Link to='/signin'>Sign In</Link>
+              // <Button color="inherit" component={Link} to="/signin">
+              //   Sign In
+              // </Button>
+              <Button color="inherit" onClick={signIn}>
                 Sign In
               </Button>
             )}
-            <Button color="inherit" component={Link} to="/signup">
+            <Button color="inherit" onClick={signUp}>
               Sign Up
             </Button>
           </Router>

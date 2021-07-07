@@ -1,4 +1,5 @@
 import HttpService from "./HttpService";
+
 export const LoadProfile = () => {
   const http = new HttpService();
   let profileUrl = "{handle}";
