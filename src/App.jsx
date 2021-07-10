@@ -16,8 +16,8 @@ import Sidebar from "./components/Sidebar";
 
 export default function App() {
   return (
-    <div className="container my-3">
-      <div className="app row">
+    <div className="containe">
+      <div className="app">
         <Router>
           <Sidebar />
           <Feed />

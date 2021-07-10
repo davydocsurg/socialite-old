@@ -1,7 +1,9 @@
 .sidebar {
   border-right: 1px solid #e9e8de;
-  /* min-width: 250px; */
-  margin-top: 20px;
+  -webkit-box-flex: 0.3 !important;
+      -ms-flex: 0.3 !important;
+          flex: 0.3 !important;
+  margin-top: 20px !important;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -54,11 +56,14 @@
 }
 
 .feed {
+  -webkit-box-flex: 0.4 !important;
+      -ms-flex: 0.4 !important;
+          flex: 0.4 !important;
   border-right: 1px solid #e9e8de;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -74,23 +79,178 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #50b7f5;
+  background-color: white !important;
   z-index: 100;
   border: 1px solid #e9e8de;
   padding: 15px 20px;
 }
 
-.feed h2 {
+.feed > h2 {
   font-size: 20px;
   font-weight: 800;
+}
+
+.widgets {
+  -webkit-box-flex: 0.3 !important;
+      -ms-flex: 0.3 !important;
+          flex: 0.3 !important;
+}
+
+.widgets__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e9e8de;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.widgets__input > input {
+  border: none;
+  background-color: #e9e8de;
+}
+
+.widgets__searchIcon {
+  color: gray;
+}
+
+.widgets__widgetContainer {
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+}
+
+.widgets__widgetContainer > h2 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.tweetBox {
+  padding-bottom: 10px;
+  border-bottom: 8px solid #e9e8de;
+  padding-right: 10px;
+}
+
+.tweetBox > form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tweetBox__input {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tweetBox__input > input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+}
+
+.tweetBox__imageInput {
+  border: none;
+  padding: 10px;
+}
+
+.tweetBox__tweetButton {
+  background-color: #50b7f5 !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 80px;
+  height: 40px !important;
+  margin-top: 20px !important;
+  margin-left: auto !important;
+}
+
+.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid var(--twitter-background);
+  padding-bottom: 10px;
+}
+
+.post__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px;
+}
+
+.post__body > img {
+  border-radius: 20px;
+}
+
+.post__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.post__headerDescription {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.post__headerText > h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.post__badge {
+  font-size: 14px !important;
+  color: #50b7f5;
+}
+
+.post__headerSpecial {
+  font-weight: 600;
+  font-size: 12px;
+  color: gray;
+}
+
+.post__avatar {
+  padding: 20px;
 }
 
 * {
   margin: 0% !important;
 }
 
-.app {
+html {
   height: 100vh !important;
+}
+
+.app {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .signin_link {
