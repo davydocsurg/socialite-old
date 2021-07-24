@@ -16,7 +16,7 @@ function Widgets() {
       </div>
 
       <div className="widgets__widgetContainer mt-3">
-        <h2>What's happening</h2>
+        <h2 className="mb-2">What's happening</h2>
         <TwitterTimelineEmbed
           sourceType="profile"
           // The preferred screen name goes next:
@@ -24,7 +24,7 @@ function Widgets() {
           // Style options goes here:
           options={{ height: 600 }}
         />
-        <TwitterTweetEmbed tweetId={"1386792034023919619"} />
+        <TwitterTweetEmbed tweetId={"1374156837323481092"} />
 
         <TwitterTimelineEmbed
           sourceType="profile"

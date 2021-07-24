@@ -1,8 +1,8 @@
 .sidebar {
   border-right: 1px solid #e9e8de;
-  -webkit-box-flex: 0.3 !important;
-      -ms-flex: 0.3 !important;
-          flex: 0.3 !important;
+  -webkit-box-flex: 0.2 !important;
+      -ms-flex: 0.2 !important;
+          flex: 0.2 !important;
   margin-top: 20px !important;
   padding-left: 20px;
   padding-right: 20px;
@@ -56,13 +56,10 @@
 }
 
 .feed {
-  -webkit-box-flex: 0.4 !important;
-      -ms-flex: 0.4 !important;
-          flex: 0.4 !important;
+  -webkit-box-flex: 0.5 !important;
+      -ms-flex: 0.5 !important;
+          flex: 0.5 !important;
   border-right: 1px solid #e9e8de;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: scroll !important;
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
@@ -76,18 +73,18 @@
 }
 
 .feed__header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-sticky !important;
+  position: sticky !important;
   top: 0;
   background-color: white !important;
   z-index: 100;
-  border: 1px solid #e9e8de;
+  border-bottom: 1px solid #e9e8de;
   padding: 15px 20px;
 }
 
-.feed > h2 {
-  font-size: 20px;
-  font-weight: 800;
+.feed h2 {
+  font-size: 20px !important;
+  font-weight: 700;
 }
 
 .widgets {
@@ -189,7 +186,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border-bottom: 1px solid var(--twitter-background);
+  border-bottom: 1px solid #e9e8de;
   padding-bottom: 10px;
 }
 
@@ -244,13 +241,14 @@
 }
 
 html {
-  height: 100vh !important;
+  scroll-behavior: smooth !important;
 }
 
 .app {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+  height: 100vh !important;
 }
 
 .signin_link {

@@ -16,15 +16,15 @@ import Sidebar from "./components/Sidebar";
 
 export default function App() {
   return (
-    <div className="containe">
-      <div className="app">
-        <Router>
-          <Sidebar />
-          <Feed />
-          <Widgets />
-          <Routes></Routes>
-        </Router>
-      </div>
+    // <div className="containeb">
+    <div className="app">
+      <Router>
+        <Sidebar />
+        <Feed className="" />
+        <Widgets />
+        <Routes></Routes>
+      </Router>
     </div>
+    // </div>
   );
 }

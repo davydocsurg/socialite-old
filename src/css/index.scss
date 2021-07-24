@@ -10,11 +10,16 @@
 }
 
 html {
-  height: 100vh !important;
+  scroll-behavior: smooth !important;
 }
+
+// body {
+//   max-height: 100vh !important;
+// }
 
 .app {
   display: flex !important;
+  height: 100vh !important;
 }
 
 .signin_link {

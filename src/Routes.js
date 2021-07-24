@@ -14,15 +14,15 @@ function Routes() {
       <Switch>
         <Route
           exact
-          path="/"
-          render={(props) => <Redirect to={{ pathname: "/" }} />}
+          path="/home"
+          render={(props) => <Redirect to={{ pathname: "/home" }} />}
         />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/signin" component={signIn} />
         <Route exact path="/signup" component={signUp} />
         {/*Redirect if not authenticated */}{" "}
         <Guard
-          path="/"
+          path="/home"
           token="user-token"
           routeRedirect="/signin"
           component={PrivateRoute}

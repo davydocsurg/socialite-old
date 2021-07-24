@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Avatar, Button } from "@material-ui/core";
+import tweepProf from ".././assets/images/avatar.png";
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState("");
@@ -16,7 +17,7 @@ function TweetBox() {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src=".././assets/images/avatar.png" />
+          <Avatar src={tweepProf} className="shadow-sm" />
           <input
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
@@ -30,7 +31,7 @@ function TweetBox() {
           onChange={(e) => setTweetImage(e.target.value)}
           className="tweetBox__imageInput"
           placeholder="Optional: Enter image URL"
-          type="text"
+          type="file"
         />
 
         <Button

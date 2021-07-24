@@ -7,17 +7,17 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
 const Tweet = forwardRef(
-  ({ displayName, username, verified, text, tweetImage, avatar }, ref) => {
+  ({ tweepName, username, verified, text, tweetImage, avatar }, ref) => {
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
-          <Avatar src={avatar} />
+          <Avatar src={avatar} className="shadow-sm" />
         </div>
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
               <h3>
-                {displayName}{" "}
+                {tweepName}{" "}
                 <span className="post__headerSpecial">
                   {verified && <VerifiedUserIcon className="post__badge" />} @
                   {username}
@@ -28,7 +28,7 @@ const Tweet = forwardRef(
               <p>{text}</p>
             </div>
           </div>
-          <img src={tweetImage} alt="" />
+          <img src={tweetImage} alt="" className="py-2 img-fluid" />
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />
